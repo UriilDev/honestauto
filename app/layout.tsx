@@ -10,13 +10,17 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://honestauto.md'
 const TITLE = 'Автомобили из Китая в Молдову под ключ | HonestAuto'
 const DESCRIPTION = 'Подбор, независимая экспертиза и доставка автомобилей из Китая в Молдову под ключ. BYD, Geely, BMW, Audi и другие. Прозрачная цена до сделки. Кишинёв.'
 
+const NOINDEX = process.env.NEXT_PUBLIC_NOINDEX === '1'
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: TITLE, template: '%s | HonestAuto' },
   description: DESCRIPTION,
   applicationName: 'HonestAuto',
   keywords: ['автомобили из Китая в Молдову', 'авто из Китая', 'доставка авто из Китая', 'китайские автомобили', 'BYD Молдова', 'запчасти из Китая'],
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
+  robots: NOINDEX
+    ? { index: false, follow: false }
+    : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
   // Подтверждение права на сайт в Google Search Console (то же, что стояло на старом сайте)
   verification: { google: 'kYLlyEfFVJt8gqUjpdV3p8btSX8Ju9V-KAxnjxRjgfk' },
   openGraph: {

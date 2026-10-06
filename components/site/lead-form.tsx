@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, Check, Phone } from 'lucide-react'
 
-export function LeadForm() {
+export function LeadForm({ defaultCar = '' }: { defaultCar?: string }) {
   const [state, setState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [car, setCar] = useState('')
+  const [car, setCar] = useState(defaultCar)
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export function LeadForm() {
       if (!response.ok) throw new Error('Request failed')
       setState('success')
       form.reset()
-      setCar('')
+      setCar(defaultCar)
     } catch {
       setState('error')
     }
@@ -52,8 +52,8 @@ export function LeadForm() {
   </form>
 }
 
-export function LeadFormSection({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
-  return <section className="contact-section" id="contact"><div className="container contact-layout"><div className="contact-content"><span className="section-label">{eyebrow}</span><h2>{title}</h2><p>{text}</p><div className="contact-features"><div className="feature"><span className="feature-icon">⚡</span><span>Быстрый ответ</span></div><div className="feature"><span className="feature-icon">🎯</span><span>Точная оценка</span></div><div className="feature"><span className="feature-icon">✓</span><span>Без обязательств</span></div></div></div><LeadForm /></div></section>
+export function LeadFormSection({ eyebrow, title, text, defaultCar }: { eyebrow: string; title: string; text: string; defaultCar?: string }) {
+  return <section className="contact-section" id="contact"><div className="container contact-layout"><div className="contact-content"><span className="section-label">{eyebrow}</span><h2>{title}</h2><p>{text}</p><div className="contact-features"><div className="feature"><span className="feature-icon">⚡</span><span>Быстрый ответ</span></div><div className="feature"><span className="feature-icon">🎯</span><span>Точная оценка</span></div><div className="feature"><span className="feature-icon">✓</span><span>Без обязательств</span></div></div></div><LeadForm defaultCar={defaultCar} /></div></section>
 }
 
 export default LeadForm

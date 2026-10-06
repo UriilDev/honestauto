@@ -1,8 +1,8 @@
 export const siteContent = {
   brand: { name: 'HONEST AUTO', tagline: 'Автомобили из Китая в Молдову' },
   nav: ['Главная', 'Каталог', 'Как мы работаем', 'О компании', 'Контакты'],
-  navLinks: [{ label: 'Главная', href: '#top' }, { label: 'Каталог', href: '#catalog' }, { label: 'Как мы работаем', href: '#process' }, { label: 'О компании', href: '#about' }, { label: 'Контакты', href: '#contact' }],
-  contacts: { phone: '+373 67 899 299', phoneHref: 'tel:+37367899299', email: 'info@honestauto.md', address: 'Кишинёв, ул. Мештерул Маноле 14/3', mapUrl: 'https://maps.app.goo.gl/z9HFczGHMEZkCpf79' },
+  navLinks: [{ label: 'Главная', href: '/ru' }, { label: 'Китайские бренды', href: '/ru/chinese-brands' }, { label: 'Международные бренды', href: '/ru/global-brands' }, { label: 'О компании', href: '/ru/about' }, { label: 'Контакты', href: '/ru/contacts' }],
+  contacts: { phone: '+373 67 899 299', phoneHref: 'tel:+37367899299', email: 'sales@honestauto.md', address: 'Кишинёв, ул. Мештерул Маноле 14/3', mapUrl: 'https://maps.app.goo.gl/z9HFczGHMEZkCpf79' },
   hero: { eyebrow: 'Прямые поставки из Китая', title: 'Ваш новый автомобиль —\nчестно и под ключ', accent: 'из Китая в Молдову', description: 'Находим, проверяем и доставляем автомобили из Китая. Вы знаете реальную цену и каждый шаг сделки.', primaryCta: 'Подобрать автомобиль', secondaryCta: 'Как это работает' },
   stats: [{ value: '500+', label: 'автомобилей доставили' }, { value: 'до 30%', label: 'экономия от рынка' }, { value: '7 лет', label: 'на рынке' }],
   advantages: [{ title: 'Прозрачная цена', text: 'Показываем полный расчёт до оформления сделки.' }, { title: 'Проверка экспертом', text: 'Диагностика, история и видеоотчёт по каждому авто.' }, { title: 'Доставка под ключ', text: 'Берём на себя логистику, документы и растаможку.' }],
@@ -11,7 +11,7 @@ export const siteContent = {
   location: { eyebrow: 'Мы рядом', title: 'HonestAuto в Кишинёве', description: 'Приезжайте на встречу или получите расчёт онлайн. Покажем автомобили, объясним процесс и ответим на вопросы.', address: 'Кишинёв, ул. Мештерул Маноле 14/3' },
   steps: [{ number: '01', title: 'Заявка', text: 'Расскажите, какой автомобиль ищете.' }, { number: '02', title: 'Подбор', text: 'Находим лучшие варианты и считаем стоимость.' }, { number: '03', title: 'Проверка', text: 'Проводим независимую экспертизу в Китае.' }, { number: '04', title: 'Доставка', text: 'Организуем путь до Молдовы.' }],
   contact: { eyebrow: 'Получите расчёт', title: 'Начните с разговора', text: 'Оставьте контакты. Ответим в течение рабочего дня и подскажем лучший вариант.', button: 'Получить консультацию' },
-  footer: { description: 'Честный путь к вашему автомобилю из Китая в Молдову.', address: 'Кишинёв, ул. Мештерул Маноле 14/3', phone: '+373 67 899 299', email: 'info@honestauto.md' }
+  footer: { description: 'Честный путь к вашему автомобилю из Китая в Молдову.', address: 'Кишинёв, ул. Мештерул Маноле 14/3', phone: '+373 67 899 299', email: 'sales@honestauto.md' }
 } as const
 
 export const images = {

@@ -2,5 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://honestauto.md'
+  // Тестовое размещение (NEXT_PUBLIC_NOINDEX=1) закрыто от индексации
+  if (process.env.NEXT_PUBLIC_NOINDEX === '1') return { rules: { userAgent: '*', disallow: '/' } }
   return { rules: { userAgent: '*', allow: '/', disallow: '/api/' }, sitemap: `${base}/sitemap.xml`, host: base }
 }
